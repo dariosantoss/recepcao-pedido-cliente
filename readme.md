@@ -45,7 +45,19 @@ Para executar o projeto localmente, siga os passos abaixo:
 2. Certifique-se de ter o Java 17 e o Maven instalados.
 3. Configure as propriedades do banco de dados no arquivo `application.properties`.
 4. Execute o comando `mvn spring-boot:run` na raiz do projeto.
-
+5. Instale o banco de dados MariaDB:
+   Certifique-se de ter o MariaDB instalado em sua máquina. Você pode baixá-lo e instalá-lo a partir do [site oficial](https://mariadb.org/download/).
+6. Crie um banco de dados chamado `loja`:
+   Após instalar o MariaDB, crie um banco de dados com o nome `loja`.
+7. Configure as propriedades do banco de dados**:
+   No arquivo `src/main/resources/application.yml`, configure as propriedades do datasource para se conectarem ao banco de dados MariaDB:
+8. ```yaml
+   spring:
+     datasource:
+       url: jdbc:mariadb://localhost:3307/loja
+       username: root
+       password: 12345
+       driver-class-name: org.mariadb.jdbc.Driver
 ## Scripts SQL
 
 Abaixo estão os scripts SQL para criar as tabelas no banco de dados e inserir dados de exemplo:
